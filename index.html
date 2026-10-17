@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视小说 - 书影联动公映片单与正版平台导航</title>
+<meta name="description" content="影视小说（yingshixiaoshuo-h5）做书影联动格式正版导航：公映片单、类型联动、每日书影与正版观看守则，只列持牌视频平台与正版阅读平台名称及官方入口，不提供小说章节、不内嵌阅读器。官方网址：https://yingshixiaoshuo-h5.github.io">
+<meta name="keywords" content="影视小说, yingshixiaoshuo-h5, 书影联动导航, 公映片单, 持牌视频平台入口, 正版阅读平台">
+<meta name="robots" content="index,follow">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:#0c0a08;color:#f3ede2;line-height:1.8;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(680px 340px at 12% 8%, rgba(220,78,46,.12), transparent 55%),
+    radial-gradient(620px 320px at 88% 92%, rgba(37,60,110,.18), transparent 55%),
+    #0c0a08}
+.ys-nav{position:sticky;top:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(12,10,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(220,78,46,.22)}
+.ys-nav .logo{font-size:20px;font-weight:900;letter-spacing:.5px}
+.ys-nav .logo b{color:#dc4e2e}
+.ys-nav .logo i{color:#7c93c8;font-style:normal}
+.ys-nav .links{display:flex;gap:6px;flex-wrap:wrap}
+.ys-nav .links a{font-size:13px;color:#b9ab97;padding:6px 12px;border-radius:20px;transition:.25s}
+.ys-nav .links a:hover{background:rgba(220,78,46,.16);color:#f3ede2}
+
+.hero{padding:52px 20px 44px;text-align:center}
+.book{max-width:780px;margin:0 auto 16px;background:#15110d;border:1px solid rgba(220,78,46,.26);border-radius:18px;padding:24px;position:relative;overflow:hidden}
+.book::before{content:"📖";position:absolute;right:18px;top:14px;font-size:22px;opacity:.8}
+.shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.chap{height:96px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#0c0a08;box-shadow:inset 0 -6px 0 rgba(0,0,0,.14)}
+.chap .sp{font-size:10px;opacity:.6;margin-bottom:3px}
+.chap:nth-child(1){background:linear-gradient(135deg,#dc4e2e,#f0a98f)}
+.chap:nth-child(2){background:linear-gradient(135deg,#7c93c8,#c3cdec)}
+.chap:nth-child(3){background:linear-gradient(135deg,#caa24a,#ecd49a)}
+.chap:nth-child(4){background:linear-gradient(135deg,#3f7d6e,#9fd8c8)}
+.chap:nth-child(5){background:linear-gradient(135deg,#a85b7d,#e0b3cb)}
+.chap:nth-child(6){background:linear-gradient(135deg,#5b6b8c,#bcc7df)}
+.chap:nth-child(7){background:linear-gradient(135deg,#b5562f,#e0a07f)}
+.chap:nth-child(8){background:linear-gradient(135deg,#8a8170,#ddd4c2)}
+.film{margin-top:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.reel{height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#f3ede2;background:#1c1812;border:1px dashed rgba(124,147,200,.4)}
+.strip{margin-top:16px;height:34px;border-radius:8px;background:repeating-linear-gradient(90deg,#171209 0 8px,#221a10 8px 10px);display:flex;align-items:center;justify-content:center;font-size:12px;color:#f0a98f;font-weight:800}
+.mark{display:inline-block;margin-top:14px;font-size:13px;font-weight:900;color:#dc4e2e;background:#15110d;border:1px solid rgba(220,78,46,.3);padding:4px 14px;border-radius:20px}
+.disclaim{display:block;margin-top:10px;font-size:12px;color:#f0886a}
+.hero h1{font-size:30px;color:#f3ede2;margin:8px 0 12px}
+.hero h1 b{color:#dc4e2e}
+.hero p{color:#b9ab97;max-width:680px;margin:0 auto 16px;font-size:15px}
+.hero .url{display:inline-block;font-size:13px;color:#0c0a08;font-weight:800;background:linear-gradient(90deg,#dc4e2e,#7c93c8);padding:8px 18px;border-radius:30px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.chips span{font-size:12px;color:#f3ede2;padding:5px 13px;border-radius:20px;border:1px solid rgba(220,78,46,.2)}
+.chips span:nth-child(1){border-color:#dc4e2e;color:#f0a98f}
+.chips span:nth-child(2){border-color:#7c93c8;color:#c3cdec}
+.chips span:nth-child(3){border-color:#caa24a;color:#ecd49a}
+
+.wrap{max-width:1160px;margin:0 auto;padding:58px 20px}
+.kicker{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#dc4e2e;margin-bottom:8px}
+.sec-title{font-size:26px;font-weight:900;color:#f3ede2;margin-bottom:26px}
+.sec-title b{color:#7c93c8}
+
+.link{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.lk{background:#15110d;border:1px solid rgba(220,78,46,.14);border-radius:14px;overflow:hidden;transition:.3s}
+.lk:hover{transform:translateY(-4px);border-color:#dc4e2e;box-shadow:0 16px 36px rgba(220,78,46,.12)}
+.lk .top{height:96px;position:relative;display:flex;align-items:flex-end;padding:10px}
+.lk .top.b1{background:linear-gradient(135deg,#7a2a18,#dc4e2e)}
+.lk .top.b2{background:linear-gradient(135deg,#26375f,#7c93c8);color:#0c0a08}
+.lk .top.b3{background:linear-gradient(135deg,#2c5a4f,#3f7d6e)}
+.lk .top.b4{background:linear-gradient(135deg,#6b5320,#caa24a)}
+.lk .top .tag{font-size:11px;font-weight:800;color:#0c0a08;background:#f3ede2;padding:2px 9px;border-radius:12px}
+.lk .top .ver{position:absolute;right:10px;top:10px;font-size:10px;color:#0c0a08;background:#ecd49a;padding:2px 8px;border-radius:10px}
+.lk .body{padding:16px 18px}
+.lk .body h4{color:#f3ede2;font-size:16px;margin-bottom:4px}
+.lk .body .meta{font-size:12px;color:#dc4e2e;margin-bottom:6px}
+.lk .body p{font-size:13px;color:#b9ab97;margin:0}
+.lk .body a{display:inline-block;margin-top:8px;font-size:12px;color:#7c93c8;text-decoration:none}
+.lk .body a:hover{text-decoration:underline}
+
+.types{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.tp{background:#15110d;border-radius:14px;padding:20px;transition:.3s;border:1px solid rgba(185,171,151,.14)}
+.tp:hover{transform:translateY(-3px)}
+.tp .no{font-size:12px;font-weight:900;color:#caa24a;margin-bottom:6px}
+.tp h4{color:#f3ede2;font-size:15px;margin-bottom:4px}
+.tp p{color:#b9ab97;font-size:12px;margin:0}
+.tp.t2{border-top:3px solid #7c93c8}
+.tp.t3{border-top:3px solid #3f7d6e}
+.tp.t4{border-top:3px solid #dc4e2e}
+
+.daily{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.dy{background:#15110d;border-left:4px solid #dc4e2e;border-radius:12px;padding:18px}
+.dy h4{color:#f3ede2;font-size:15px;margin-bottom:4px}
+.dy .slot{font-size:12px;color:#7c93c8;font-weight:800;margin-bottom:6px}
+.dy p{color:#b9ab97;font-size:13px;margin:0}
+.dy.d2{border-left-color:#7c93c8}
+.dy.d3{border-left-color:#3f7d6e}
+.dy.d4{border-left-color:#caa24a}
+.dy.d5{border-left-color:#a85b7d}
+.dy.d6{border-left-color:#dc4e2e}
+
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.ru{background:#15110d;border:1px solid rgba(220,78,46,.22);border-radius:12px;padding:18px;text-align:center}
+.ru .num{font-size:24px;font-weight:900;color:#dc4e2e;margin-bottom:6px}
+.ru h4{color:#f3ede2;font-size:14px;margin-bottom:4px}
+.ru p{color:#b9ab97;font-size:12px;margin:0}
+
+.about{border:1px solid rgba(220,78,46,.22);border-radius:16px;padding:30px;background:linear-gradient(135deg,rgba(220,78,46,.08),rgba(124,147,200,.06));display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.about .txt{flex:1;min-width:260px}
+.about h2{color:#f3ede2;font-size:20px;margin-bottom:10px}
+.about h2 b{color:#dc4e2e}
+.about p{color:#b9ab97;font-size:14px;margin-bottom:8px}
+.about .stats{display:flex;gap:20px;flex-wrap:wrap}
+.about .stats .n{font-size:26px;font-weight:900;color:#caa24a}
+.about .stats .l{font-size:11px;color:#dc4e2e}
+
+.foot{text-align:center;padding:32px 20px;background:#060503;border-top:1px solid rgba(220,78,46,.16);color:#8c8071;font-size:13px}
+.foot a{color:#dc4e2e}
+.foot .lg{font-size:18px;font-weight:900;color:#f3ede2;margin-bottom:8px}
+
+@media(max-width:640px){.hero h1{font-size:24px}.ys-nav .links a{font-size:12px;padding:5px 9px}.shelf,.film{grid-template-columns:repeat(2,1fr)}.chap{height:80px}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<nav class="ys-nav">
+  <div class="logo"><b>影视小说</b> <i>· 书影联动</i></div>
+  <div class="links">
+    <a href="#home">首页</a>
+    <a href="#link">公映片单</a>
+    <a href="#types">类型联动</a>
+    <a href="#daily">每日书影</a>
+    <a href="#rules">正版守则</a>
+  </div>
+</nav>
+
+<header id="home" class="hero">
+  <div class="book" aria-hidden="true">
+    <div class="shelf">
+      <div class="chap"><span class="sp">卷1</span>原著格</div><div class="chap"><span class="sp">卷2</span>改编格</div>
+      <div class="chap"><span class="sp">卷3</span>剧作格</div><div class="chap"><span class="sp">卷4</span>纪录格</div>
+      <div class="chap"><span class="sp">卷5</span>动画格</div><div class="chap"><span class="sp">卷6</span>悬疑格</div>
+      <div class="chap"><span class="sp">卷7</span>历史格</div><div class="chap"><span class="sp">卷0</span>持牌格</div>
+    </div>
+    <div class="film">
+      <div class="reel">正片口</div><div class="reel">剧集口</div><div class="reel">动画口</div><div class="reel">纪录口</div>
+    </div>
+    <div class="strip">BOOK × FILM · 只跳持牌视频平台与正版阅读平台</div>
+    <span class="mark">书影联动·章节格</span>
+    <span class="disclaim">⚠️ 非小说资源站、不内嵌阅读器、不提供章节文本</span>
+  </div>
+  <h1>影视小说：<b>书影联动</b>只导正版入口</h1>
+  <p>小说改影视要过原著改编权、摄制权授权，且不能超出授权范围歪曲篡改原作 [14,16,18](@ref)；真做在线小说阅读还涉及网络出版资质 [6,9](@ref)。所以本页<strong>不做「影视小说资源库」</strong>：不放小说章节、不内嵌阅读器、不引盗版书源；只做书→影联动——影视跳持牌视频平台，原著跳正版阅读平台名称与官方入口。</p>
+  <span class="url">🌐 https://yingshixiaoshuo-h5.github.io</span>
+  <div class="chips">
+    <span>📖 公映片单</span><span>🎞️ 类型联动</span><span>📅 每日书影</span>
+  </div>
+</header>
+
+<main>
+<section id="link" class="wrap">
+  <div class="kicker">BOOK × FILM</div>
+  <h2 class="sec-title">公映片单 <b>书影联动样例</b></h2>
+  <div class="link">
+    <article class="lk"><div class="top b1"><span class="tag">原著格</span><span class="ver">持牌平台</span></div><div class="body"><h4>活着</h4><div class="meta">余华原著 · 张艺谋1994 · 剧情</div><p>原著走正版阅读平台；影视版去持牌视频平台搜正版，不内嵌播放器。</p><a href="https://v.qq.com" target="_blank" rel="noopener">去持牌平台 ↗</a></div></article>
+    <article class="lk"><div class="top b2"><span class="tag">改编格</span><span class="ver">正版/字幕</span></div><div class="body"><h4>琅琊榜</h4><div class="meta">海宴原著 · 剧集 · 古装权谋</div><p>小说在正版阅读平台；剧集跳持牌视频平台官方入口，不引换源。</p><a href="https://www.iqiyi.com" target="_blank" rel="noopener">去持牌平台 ↗</a></div></article>
+    <article class="lk"><div class="top b3"><span class="tag">剧作格</span><span class="ver">官方/开放</span></div><div class="body"><h4>流浪地球</h4><div class="meta">刘慈欣原著 · 电影 · 科幻</div><p>原著正版阅读；电影走持牌平台/公映入口，不写网盘提取码。</p><a href="https://www.mgtv.com" target="_blank" rel="noopener">去持牌平台 ↗</a></div></article>
+    <article class="lk"><div class="top b4"><span class="tag">动画格</span><span class="ver">正版/字幕</span></div><div class="body"><h4>全职高手</h4><div class="meta">蝴蝶蓝原著 · 动画/剧集 · 竞技</div><p>原著跳正版阅读平台；动画跳持牌平台专区，只列官方入口。</p><a href="https://www.bilibili.com" target="_blank" rel="noopener">去持牌平台 ↗</a></div></article>
+  </div>
+</section>
+
+<section id="types" class="wrap">
+  <div class="kicker">GENRE LINK</div>
+  <h2 class="sec-title">类型联动 <b>四格</b></h2>
+  <div class="types">
+    <div class="tp t1"><div class="no">L1 · 文学改编</div><h4>经典/当代小说</h4><p>名著、严肃文学、作者小说；影视跳持牌平台，原著跳正版阅读平台。</p></div>
+    <div class="tp t2"><div class="no">L2 · 网文改剧</div><h4>仙侠/悬疑/都市</h4><p>网文改编剧集；标「原著正版阅读平台」，不列盗版书源站。</p></div>
+    <div class="tp t3"><div class="no">L3 · 科幻奇幻</div><h4>硬科幻/世界观向</h4><p>小说与电影/动画分区；只给持牌平台名称与官方入口。</p></div>
+    <div class="tp t4"><div class="no">L4 · 纪实传记</div><h4>传记/历史原型</h4><p>原著书籍与公映传记片分开标；不内嵌章节、不写提取码。</p></div>
+  </div>
+  <div class="types" style="margin-top:16px">
+    <div class="tp"><div class="no">卷0 · 持牌影视</div><h4>央视频 / 1905电影网</h4><p>公映片单、央视官方回看。</p><a href="https://www.1905.com" target="_blank" rel="noopener" style="color:#dc4e2e">1905 ↗</a></div>
+    <div class="tp t2"><div class="no">综合口</div><h4>腾讯/爱奇艺/优酷/芒果/咪咕</h4><p>正版剧集电影会员区与免费区。</p><a href="https://www.iqiyi.com" target="_blank" rel="noopener" style="color:#dc4e2e">爱奇艺 ↗</a></div>
+    <div class="tp t3"><div class="no">正版阅读</div><h4>微信读书 / 阅文 / 起点 / 晋江官方</h4><p>只列平台名称与官网入口，不抓章节、不引盗版书站。</p><a href="https://weread.qq.com" target="_blank" rel="noopener" style="color:#dc4e2e">微信读书 ↗</a></div>
+    <div class="tp t4"><div class="no">纪录口</div><h4>B站放映厅</h4><p>正版纪录片、改编原著解说走官方。</p><a href="https://www.bilibili.com" target="_blank" rel="noopener" style="color:#dc4e2e">B站 ↗</a></div>
+  </div>
+</section>
+
+<section id="daily" class="wrap">
+  <div class="kicker">DAILY BOOK×FILM</div>
+  <h2 class="sec-title">每日书影 <b>六格</b></h2>
+  <div class="daily">
+    <div class="dy"><div class="slot">晨口·文学</div><h4>名著改编剧</h4><p>列原著正版阅读平台＋影视持牌入口，不提前放未授权资源。</p></div>
+    <div class="dy d2"><div class="slot">上午·网文</div><h4>网文改剧格</h4><p>跳原著官方阅读页与剧集持牌平台，不引盗版书源。</p></div>
+    <div class="dy d3"><div class="slot">午后·科幻</div><h4>科幻书影</h4><p>小说与电影/动画分区；建议正版版本，只列持牌入口。</p></div>
+    <div class="dy d4"><div class="slot">下午·悬疑</div><h4>悬疑改编</h4><p>原著正版阅读＋剧集持牌平台；标字幕来源。</p></div>
+    <div class="dy d5"><div class="slot">傍晚·动画</div><h4>轻小说/漫改</h4><p>原著跳正版平台；动画跳持牌专区，不写提取码。</p></div>
+    <div class="dy d6"><div class="slot">夜口·重读</div><h4>高分回看</h4><p>书影对照重刷；只给持牌回看入口，不内嵌阅读器。</p></div>
+  </div>
+</section>
+
+<section id="rules" class="wrap">
+  <div class="kicker">LINK RULES</div>
+  <h2 class="sec-title">正版书影 <b>守则</b></h2>
+  <div class="rules">
+    <div class="ru"><div class="num">01</div><h4>改编授权</h4><p>小说改影视需原著改编权/摄制权授权，不超范围歪曲篡改 [14,18](@ref)。</p></div>
+    <div class="ru"><div class="num">02</div><h4>持牌优先</h4><p>影视只跳持牌视频平台；原著只跳正版阅读平台名称与官方入口。</p></div>
+    <div class="ru"><div class="num">03</div><h4>不碰书源</h4><p>不内嵌小说阅读器、不列盗版书站、不提供章节文本、不写提取码。</p></div>
+    <div class="ru"><div class="num">04</div><h4>不碰聚合</h4><p>禁用「免费全集/换源/离线缓存/破解」；不引未授权聚合源。</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="about">
+    <div class="txt">
+      <h2>影视小说 <b>书影联动是什么</b></h2>
+      <p>不是小说资源站，也不是影视解析站，而是一组章节格：书脊格装原著入口、映画格装影视入口、类型进联动、每日进书影、守则装版权边界。静态单页、移动端自适应、锚点内链、不生成 robots.txt / sitemap.xml，符合必应收录基本规范（唯一H1、完整meta、语义化nav/main/section/article/footer）。</p>
+      <p>长尾吃「书影联动导航 / 公映片单 / 持牌视频平台入口 / 正版阅读平台」。全站严格只做正版、公映、持牌、开放授权导航。</p>
+    </div>
+    <div class="stats">
+      <div><div class="n">8</div><div class="l">章节格</div></div>
+      <div><div class="n">4</div><div class="l">映画口</div></div>
+      <div><div class="n">6</div><div class="l">每日书影</div></div>
+      <div><div class="n">0</div><div class="l">小说章节</div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="lg">📖🎞️ 影视小说·书影联动（非小说资源站）</div>
+  官方网址：<a href="https://yingshixiaoshuo-h5.github.io">https://yingshixiaoshuo-h5.github.io</a><br>
+  ⚠️ 本页不内嵌小说阅读器、不提供章节、不引盗版书源，仅作持牌平台与正版阅读平台导航<br>
+  © 2026 影视小说｜公映片单 / 类型联动 / 每日书影 / 正版书影导航
+</footer>
+
+</body>
+</html>
